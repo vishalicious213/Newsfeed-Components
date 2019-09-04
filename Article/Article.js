@@ -114,7 +114,6 @@ const data = [
 */
 
 //6:25 - 6:35
-
 function createArticle(aContainer, aTitle, aDate, aContent, aButton) {
   const articleContainer = document.createElement("div");
   const articleTitle = document.createElement("h2");
@@ -122,3 +121,15 @@ function createArticle(aContainer, aTitle, aDate, aContent, aButton) {
   const articleContent = document.createElement("p");
   const button = document.createElement("span");
 }
+
+//6:45 - 7:00
+let expandButton = document.querySelector(".expandButton");
+let articleDiv = document.querySelector(".article");
+
+expandButton.addEventListener("click", (event) => {
+  articleDiv.classList.toggle("article-open");
+})
+
+
+// Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
+
