@@ -124,7 +124,7 @@ function createArticle(title, date, p1, p2, p3) {
   const articleP3 = document.createElement("p");
   const expandButton = document.createElement("span");
 
-  // setup structure of elements
+  // setup structure of elements (whole thing will be appended later)
   articleContainer.appendChild(articleTitle);
   articleContainer.appendChild(articleDate);
   articleContainer.appendChild(articleP1);
@@ -132,9 +132,13 @@ function createArticle(title, date, p1, p2, p3) {
   articleContainer.appendChild(articleP3);
   articleContainer.appendChild(expandButton);
 
-
-
+  // set class names
+  articleContainer.classList.add("article");
+  articleDate.classList.add("date");
+  expandButton.classList.add("expandButton");
 }
+
+
 
 //6:45 - 7:00
 let expandButton = document.querySelector(".expandButton");
