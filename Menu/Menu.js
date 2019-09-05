@@ -33,3 +33,16 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */
+
+
+function menuMaker(navItems) {
+  // define new elements
+  const menu = document.createElement("div");
+  const menuList = document.createElement("ul");
+  const students = document.createElement("li");
+  const faculty = document.createElement("li");
+  const whatsNew = document.createElement("li");
+  const techTrends = document.createElement("li");
+  const music = document.createElement("li");
+  const logOut = document.createElement("li");
+}
