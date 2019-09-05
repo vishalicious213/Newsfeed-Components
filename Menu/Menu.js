@@ -58,4 +58,12 @@ function menuMaker(navItems) {
   // set class names (get from HTML)
   menu.classList.add("menu");
   
+  // set text content (get from function parameter names)
+  students.textContent = arr.students;
+  faculty.textContent = arr.faculty;
+  whatsNew.textContent = arr.whatsNew;
+  techTrends.textContent = arr.techTrends;
+  music.textContent = arr.music;
+  logOut.textContent = arr.logOut;
+  
 }
