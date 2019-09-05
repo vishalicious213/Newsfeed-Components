@@ -45,4 +45,14 @@ function menuMaker(navItems) {
   const techTrends = document.createElement("li");
   const music = document.createElement("li");
   const logOut = document.createElement("li");
+
+  // setup structure of elements (whole thing will be appended later)
+  menu.appendChild(menuList);
+  menuList.appendChild(students);
+  menuList.appendChild(faculty);
+  menuList.appendChild(whatsNew);
+  menuList.appendChild(techTrends);
+  menuList.appendChild(music);
+  menuList.appendChild(logOut);
+  
 }
