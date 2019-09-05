@@ -132,10 +132,17 @@ function createArticle(title, date, p1, p2, p3) {
   articleContainer.appendChild(articleP3);
   articleContainer.appendChild(expandButton);
 
-  // set class names
+  // set class names (get from HTML)
   articleContainer.classList.add("article");
   articleDate.classList.add("date");
   expandButton.classList.add("expandButton");
+
+  // set text content (get from data, above)
+  articleTitle.textContent = title;
+  articleDate.textContent = date;
+  articleP1.textContent = firstParagraph;
+  articleP2.textContent = secondParagraph;
+  articleP3.textContent = thirdParagraph;
 }
 
 
