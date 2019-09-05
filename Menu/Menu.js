@@ -55,4 +55,7 @@ function menuMaker(navItems) {
   menuList.appendChild(music);
   menuList.appendChild(logOut);
   
+  // set class names (get from HTML)
+  menu.classList.add("menu");
+  
 }
