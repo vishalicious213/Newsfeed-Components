@@ -113,13 +113,27 @@ const data = [
 
 */
 
-//6:25 - 6:35
-function createArticle(aContainer, aTitle, aDate, aContent, aButton) {
+
+function createArticle(title, date, p1, p2, p3) {
+  // define new elements
   const articleContainer = document.createElement("div");
   const articleTitle = document.createElement("h2");
   const articleDate = document.createElement("p");
-  const articleContent = document.createElement("p");
-  const button = document.createElement("span");
+  const articleP1 = document.createElement("p");
+  const articleP2 = document.createElement("p");
+  const articleP3 = document.createElement("p");
+  const expandButton = document.createElement("span");
+
+  // setup structure of elements
+  articleContainer.appendChild(articleTitle);
+  articleContainer.appendChild(articleDate);
+  articleContainer.appendChild(articleP1);
+  articleContainer.appendChild(articleP2);
+  articleContainer.appendChild(articleP3);
+  articleContainer.appendChild(expandButton);
+
+
+
 }
 
 //6:45 - 7:00
