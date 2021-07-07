@@ -85,6 +85,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'I Get My Vegetables Second-Hand',
+    date: 'Sep 5st, 2019',
+    firstParagraph: `Bacon ipsum dolor amet fatback bacon t-bone chuck kielbasa tongue kevin tail drumstick meatloaf shank jerky. Buffalo capicola sausage, pastrami sirloin ball tip bacon biltong meatloaf boudin corned beef leberkas fatback landjaeger alcatra. Tenderloin pastrami spare ribs biltong flank capicola fatback swine venison corned beef short loin ham. Pork chop tail prosciutto chicken flank spare ribs shank.`,
+
+    secondParagraph: `Spare ribs landjaeger venison meatloaf tail, boudin doner sirloin pastrami shankle. Beef pastrami porchetta venison fatback short loin meatball ham hock cow jerky. Pastrami pig boudin leberkas, beef hamburger short loin meatloaf jerky bacon chuck ground round turkey capicola. Jowl kielbasa swine pork belly corned beef tongue.`,
+
+    thirdParagraph: `Turducken andouille kevin tenderloin picanha buffalo ball tip pork capicola. Beef landjaeger bresaola, pork turducken shank t-bone jerky meatloaf tenderloin. T-bone boudin drumstick biltong fatback. Beef ribs ground round corned beef tenderloin ribeye drumstick capicola boudin. Shankle capicola landjaeger ball tip bresaola fatback leberkas pork hamburger jowl bacon t-bone.`
   }
 ];
 
@@ -112,3 +121,52 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+let layout = document.querySelector(".articles"); // articles <div> (all articles hang from here)
+
+data.forEach(rawArticle => {
+  // layout.appendChild(createArticle(rawArticle.title, rawArticle.date, rawArticle.firstParagraph, rawArticle.secondParagraph, rawArticle.thirdParagraph));
+  layout.appendChild(createArticle(rawArticle.title, rawArticle.date, rawArticle.firstParagraph, rawArticle.secondParagraph, rawArticle.thirdParagraph));
+})
+
+function createArticle(title, date, p1, p2, p3) {
+  // define new elements
+  const articleContainer = document.createElement("div");
+  const articleTitle = document.createElement("h2");
+  const articleDate = document.createElement("p");
+  const articleP1 = document.createElement("p");
+  const articleP2 = document.createElement("p");
+  const articleP3 = document.createElement("p");
+  const expandButton = document.createElement("span");
+
+  // setup structure of elements (whole thing will be appended later)
+  articleContainer.appendChild(articleTitle);
+  articleContainer.appendChild(articleDate);
+  articleContainer.appendChild(articleP1);
+  articleContainer.appendChild(articleP2);
+  articleContainer.appendChild(articleP3);
+  articleContainer.appendChild(expandButton);
+
+  // set class names (get from HTML)
+  articleContainer.classList.add("article");
+  articleDate.classList.add("date");
+  expandButton.classList.add("expandButton");
+
+  // set text content (get from function parameter names)
+  articleTitle.textContent = title;
+  articleDate.textContent = date;
+  articleP1.textContent = p1;
+  articleP2.textContent = p2;
+  articleP3.textContent = p3;
+  expandButton.textContent = "Read More"; // Had to add text so button would show up!
+
+
+  expandButton.addEventListener("click", (event) => {
+    articleContainer.classList.toggle("article-open");
+  })
+
+  return articleContainer; // with this commented out we kept getting "Failed to execute 'appendChild'
+                           // on 'Node': parameter 1 is not of type 'Node'.app.js.51 addTask"
+  // return expandButton;
+
+}

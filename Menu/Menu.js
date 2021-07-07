@@ -33,3 +33,37 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */
+
+
+function menuMaker(navItems) {
+  // define new elements
+  const menu = document.createElement("div");
+  const menuList = document.createElement("ul");
+  const students = document.createElement("li");
+  const faculty = document.createElement("li");
+  const whatsNew = document.createElement("li");
+  const techTrends = document.createElement("li");
+  const music = document.createElement("li");
+  const logOut = document.createElement("li");
+
+  // setup structure of elements (whole thing will be appended later)
+  menu.appendChild(menuList);
+  menuList.appendChild(students);
+  menuList.appendChild(faculty);
+  menuList.appendChild(whatsNew);
+  menuList.appendChild(techTrends);
+  menuList.appendChild(music);
+  menuList.appendChild(logOut);
+  
+  // set class names (get from HTML)
+  menu.classList.add("menu");
+  
+  // set text content (get from function parameter names)
+  students.textContent = arr.students;
+  faculty.textContent = arr.faculty;
+  whatsNew.textContent = arr.whatsNew;
+  techTrends.textContent = arr.techTrends;
+  music.textContent = arr.music;
+  logOut.textContent = arr.logOut;
+  
+}
